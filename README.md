@@ -14,3 +14,14 @@ ip: 10.0.0.139
 * React
 * Axios
 * Reactstrap
+
+## API (made by Philips)
+
+Example Url: http://${ip}/api/${username}
+
+[Find IP](https://discovery.meethue.com/)
+[Register Username](https://developers.meethue.com/develop/get-started-2/#so-lets-get-started)
+
+##### Note
+
+The API I am using was created by Philips and I have no association with Philips or Hue. This app was created for fun 😄.
