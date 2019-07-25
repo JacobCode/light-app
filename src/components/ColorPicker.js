@@ -3,13 +3,18 @@ import axios from 'axios';
 import { HuePicker } from 'react-color';
 import { calculateXY } from '@q42philips/hue-color-converter';
 
+// SCSS
+import '../scss/ColorPicker.scss';
+
 class ColorPicker extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			API_URL: this.props.API_URL,
-			chosenColor: '#34c9eb',
-			allLights: '/groups/1/action'
+			chosenColor: '#000',
+			allLights: '/groups/1/action',
+			lights: [],
+			light: '/lights/'
 		}
 		this.onChangeComplete = this.onChangeComplete.bind(this);
 	}
@@ -52,13 +57,57 @@ class ColorPicker extends Component {
 			});
 	}
 
-	componentDidMount() {
-		this.convertToXY('#00ff00');
+	componentWillMount() {
+		axios.get(this.state.API_URL)
+			.then((res) => { return res.data })
+			.then((data) => {
+				let lights = []
+				for (var i = 1; i <= Object.keys(data.lights).length; i++) {
+					lights.push(data.lights[`${i}`]);
+				}
+				this.setState({ lights });
+			})
+			.catch(() => {
+				console.log('ERROR')
+			})
+	}
+
+	toggleLight(e, i) {
+		i = i+1;
+		axios.get(this.state.API_URL + this.state.light + i)
+			.then((res) => { return res.data })
+			.then((data) => {
+				return data.state.on;
+			})
+			.then((isOn) => {
+				axios({
+					method: 'put',
+					url: this.state.API_URL + this.state.light + i + '/state',
+					data: {
+						on: !isOn
+					}
+				})
+				.then(() => {
+					console.log(this.state.API_URL + this.state.light + i + '/state')
+				})
+			})
 	}
 	render() {
+		const { lights, chosenColor } = this.state
 		return (
 			<div id="color-picker">
-				<HuePicker color={this.state.chosenColor} onChangeComplete={ this.onChangeComplete } />
+				<HuePicker color={chosenColor} onChangeComplete={ this.onChangeComplete } />
+				<h1>Total Lights: {lights.length} </h1>
+				<div className="lights">
+					{lights.map((light, i) => {
+						return (
+							<div key={i} className="light" onClick={e => this.toggleLight(e, i)}>
+								<h4>{light.productname}</h4>
+								<i style={{color: chosenColor}} className="fas fa-lightbulb"></i>
+							</div>
+						)
+					})}
+				</div>
 			</div>
 		)
 	}
