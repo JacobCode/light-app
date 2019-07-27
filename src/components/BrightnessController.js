@@ -8,7 +8,7 @@ class BrightnessController extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			API_URL: this.props.API_URL,
+			API_URL: localStorage.getItem('lightAPI'),
 			brightness: 0,
 			bri: 0,
 			allLights: '/groups/1/action'

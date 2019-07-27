@@ -10,7 +10,7 @@ class ColorPicker extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			API_URL: this.props.API_URL,
+			API_URL: localStorage.getItem('lightAPI'),
 			chosenColor: '#000',
 			allLights: '/groups/1/action',
 			lights: [],

@@ -8,7 +8,7 @@ class ToggleSwitch extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			API_URL: props.API_URL,
+			API_URL: localStorage.getItem('lightAPI'),
 			isOn: true,
 			allLights: '/groups/1/action'
 		}

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 // API Config (your custom url here)
 // Example http://10.0.0.123/api/IaeyJd6wP0W3R2SU3-trISZlplAhl8j5TAVqMPx8
-import url from './config';
 
 // Reset Default CSS
 import './scss/Reset.scss';
@@ -16,7 +15,7 @@ class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			API_URL: url,
+			API_URL: localStorage.getItem('lightAPI') || '',
 			IP: '',
 			USERNAME: ''
 		}
@@ -27,8 +26,11 @@ class App extends Component {
 	handleForm(e) {
 		e.preventDefault();
 		const URL = `http://${this.state.IP}/api/${this.state.USERNAME}`;
-		localStorage.setItem('lightAPI', JSON.stringify(URL));
+		localStorage.setItem('lightAPI', URL);
 		this.setState({ IP: '', USERNAME: '' });
+		// setTimeout(() => {
+		// 	window.location.pathname = '/';
+		// }, 1500);
 	}
 	handleIP(e) {
 		this.setState({ IP: e.target.value });
