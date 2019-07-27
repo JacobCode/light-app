@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+// SCSS
+import '../scss/ToggleSwitch.scss';
+
 class ToggleSwitch extends Component {
 	constructor(props) {
 		super(props);
@@ -25,7 +28,7 @@ class ToggleSwitch extends Component {
 		axios.get(this.state.API_URL + '/groups/1')
 			.then((res) => { return res.data })
 			.then((data) => {
-				this.setState({ isOn: data.state.all_on })
+				this.setState({ isOn: data.state.all_on });
 			})
 			.catch(() => {
 				console.log('ERROR')
@@ -34,9 +37,9 @@ class ToggleSwitch extends Component {
 	render() {
 		return (
 			<div id="toggle-switch">
-				<div className="switch" onClick={this.toggleLight}>
+				<div className="switch">
 					<h3>Lights: {`${this.state.isOn === true ? 'ON' : 'OFF'}`}</h3>
-					<i className="fas fa-power-off"></i>
+					<i onClick={this.toggleLight} className={`fas fa-power-off ${this.state.isOn === true ? 'on' : 'off'}`}></i>
 				</div>
 			</div>
 		)

@@ -22,6 +22,10 @@ Example Url: http://${ip}/api/${username}
 [Find IP](https://discovery.meethue.com/)
 [Register Username](https://developers.meethue.com/develop/get-started-2/#so-lets-get-started)
 
+## Preview
+
+![Mobile View](https://i.postimg.cc/hjQLtKqC/Screen-Shot-2019-07-27-at-5-17-16-PM.png)
+
 ##### Note
 
 The API I am using was created by Philips and I have no association with Philips or Hue. This app was created for fun 😄.

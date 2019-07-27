@@ -1,0 +1,123 @@
+#brightness-controller {
+	.container {
+		h6 {
+			margin-bottom: 1rem;
+			font-weight: 600;
+		}
+	}
+	[type=range] {
+		-webkit-appearance: none;
+		width: 100%;
+		height: 3px;
+		top: 31%;
+		background: #738599;
+	}
+
+	[type=range]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+	}
+
+	[type=range]:focus {
+		outline: none;
+	}
+
+	[type=range]::-ms-track {
+		width: 100%;
+		cursor: pointer;
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+	}
+
+	[type=range]::-webkit-slider-thumb {
+		-webkit-box-shadow: 0px 0px 9px 0px rgb(145, 145, 145);
+		-moz-box-shadow: 0px 0px 9px 0px rgb(145, 145, 145);
+		box-shadow: 0px 0px 9px 0px rgb(145, 145, 145);
+		height: 24px;
+		width: 24px;
+		border-radius: 50%;
+		background: #fff;
+		cursor: pointer;
+		position: relative;
+		border: none;
+		top: -10px;
+	}
+
+	[type=range]::-moz-range-thumb {
+		-webkit-box-shadow: 0px 0px 9px 0px rgb(145, 145, 145);
+		-moz-box-shadow: 0px 0px 9px 0px rgb(145, 145, 145);
+		box-shadow: 0px 0px 9px 0px rgb(145, 145, 145);
+		height: 24px;
+		width: 24px;
+		border-radius: 50%;
+		background: #f3edf7;
+		cursor: pointer;
+		border: none;
+		position: relative;
+		top: -10px;
+	}
+
+	[type=range]::-ms-thumb {
+		-webkit-box-shadow: 0px 0px 9px 0px rgb(145, 145, 145);
+		-moz-box-shadow: 0px 0px 9px 0px rgb(145, 145, 145);
+		box-shadow: 0px 0px 9px 0px rgb(145, 145, 145);
+		height: 24px;
+		width: 24px;
+		border-radius: 50%;
+		background: #f3edf7;
+		cursor: pointer;
+		border: none;
+		position: relative;
+		top: -10px;
+	}
+
+	input[type=range]::-webkit-slider-runnable-track {
+		width: 100%;
+		height: 6px;
+		cursor: pointer;
+		box-shadow: 0 .1rem .5rem 0 rgba(0, 0, 0, .3);
+		background: #738599;
+		border: none;
+		border-radius: 5px;
+	}
+
+	[type=range]::-moz-range-track {
+		width: 100%;
+		height: 6px;
+		cursor: pointer;
+		box-shadow: 0 .1rem .5rem 0 rgba(0, 0, 0, .3);
+		background: #738599;
+		border: none;
+		border-radius: 5px;
+	}
+
+	[type=range]::-ms-track {
+		width: 100%;
+		height: 6px;
+		cursor: pointer;
+		box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+		background: #738599;
+		border: none;
+		border-radius: 2px;
+	}
+
+	[type=range]::-ms-fill-lower,
+	[type=range]::-ms-fill-upper {
+		background: #738599;
+		border: none;
+		border-radius: 2px;
+		box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	[type=range]:focus::-ms-fill-lower {
+		background: #738599;
+	}
+
+	[type=range]:focus::-ms-fill-upper {
+		background: #738599;
+	}
+
+	[type=range]:focus::-webkit-slider-runnable-track {
+		background: #738599;
+	}
+}

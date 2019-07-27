@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500,700&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: 'Roboto', sans-serif;
+	color: #272727;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.controller {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 1.5rem;
+}
+
+.form-container {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	h1 {
+		margin-bottom: 1.8rem;
+		font-size: 2rem;
+	}
+	form {
+		display: flex;
+		flex-direction: column;
+		input {
+			outline: none !important;
+			border: 2px solid rgb(133, 133, 133);
+			border-radius: 4px;
+			font-size: 1rem;
+			padding: 0.5rem;
+			margin-bottom: 1rem;
+			&:focus {
+				border-color: #1b1b1b;
+			}
+		}
+		button {
+			background: #1b1b1b;
+			color: #1b1b1b;
+			color: white;
+			font-size: 1rem;
+			padding: 0.5rem;
+			border-radius: 16px;
+			outline: none !important;
+			border: none;
+		}
+	}
+}

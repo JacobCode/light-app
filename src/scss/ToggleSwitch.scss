@@ -1,0 +1,29 @@
+#toggle-switch {
+	margin-bottom: 2rem;
+	.switch {
+		display: flex;
+		flex-direction: column;
+		h3 {
+			margin-bottom: 1.5rem;
+			font-weight: 600;
+		}
+		i {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			color: black;
+			background: #f3f3f3;
+			height: 40px;
+			width: 40px;
+			transition: opacity 0.4s ease-in-out;
+			cursor: pointer;
+			&.on {
+				opacity: 1;
+			}
+			&.off {
+				opacity: 0.4;
+			}
+		}
+	}
+}

@@ -1,3 +1,48 @@
-.hue-picker {
-	width: 100% !important;
+#color-picker {
+	margin: 1rem 0 2rem;
+	.hue-picker {
+		width: 100% !important;
+		margin-bottom: 2rem;
+		div:first-of-type {
+			border-radius: 16px !important;
+		}
+	}
+	.active-lights {
+		h1 {
+			font-size: 1.8rem;
+			margin-bottom: 1.5rem;
+			font-weight: 600;
+		}
+		.lights {
+			display: grid;
+			grid-template-columns: 150px 150px;
+			grid-gap: 1.5rem;
+			.light {
+				background: #fafafa;
+				cursor: pointer;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 150px;
+				h4 {
+					text-transform: capitalize;
+					margin-bottom: 0.5rem;
+				}
+				i {
+					background: white;
+					-webkit-box-shadow: 0px 0px 9px 0px rgba(224, 224, 224, 1);
+					-moz-box-shadow: 0px 0px 9px 0px rgba(224, 224, 224, 1);
+					box-shadow: 0px 0px 9px 0px rgba(224, 224, 224, 1);
+					height: 40px;
+					width: 40px;
+					border-radius: 50%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+	}
 }
+

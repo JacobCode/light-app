@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+// SCSS
+import '../scss/BrightnessController.scss';
+
 class BrightnessController extends Component {
 	constructor(props) {
 		super(props);
@@ -42,7 +45,7 @@ class BrightnessController extends Component {
 		return (
 			<div id="brightness-controller">
 				<div className="container">
-                    <span>Brightness: {this.state.brightness}%</span>
+                    <h6>Brightness: {this.state.brightness}%</h6>
                     <input onChange={this.changeBrightness} type="range" min="0" max="100" value={this.state.brightness} className="slider"></input>
                 </div>
 			</div>
